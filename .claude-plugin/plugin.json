@@ -1,0 +1,14 @@
+{
+  "name": "write-like-human",
+  "description": "Write English prose that reads like a person typed it: keyboard-only characters, no AI writing patterns.",
+  "version": "1.0.0",
+  "author": {
+    "name": "swarogan",
+    "url": "https://github.com/swarogan"
+  },
+  "homepage": "https://github.com/swarogan/write-like-human",
+  "repository": "https://github.com/swarogan/write-like-human",
+  "license": "MIT",
+  "keywords": ["writing", "prose", "ai-slop", "humanize", "style"],
+  "skills": ["./"]
+}

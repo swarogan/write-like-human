@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "write-like-human",
+  "owner": {
+    "name": "swarogan",
+    "url": "https://github.com/swarogan"
+  },
+  "description": "Install write-like-human as a Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "write-like-human",
+      "source": "./",
+      "description": "Write English prose that reads like a person typed it: keyboard-only characters, no AI writing patterns.",
+      "license": "MIT",
+      "keywords": ["writing", "prose", "ai-slop", "humanize", "style"]
+    }
+  ]
+}

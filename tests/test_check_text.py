@@ -66,6 +66,14 @@ class PhraseTests(unittest.TestCase):
     def test_semicolon_in_prose_flagged(self):
         self.assertFlags("The build is fast; the tests are not.")
 
+    def test_period_inside_closing_quote_flagged(self):
+        self.assertFlags('He said "I\'m not hungry." Soon after, he left.')
+        self.assertFlags('He said \u201cI\'m not hungry.\u201d')
+
+    def test_period_after_closing_quote_clean(self):
+        self.assertClean('He said "I\'m not hungry". Soon after, he left.')
+        self.assertClean('She asked "Are you coming?" and waited.')
+
     def test_semicolon_in_code_ignored(self):
         self.assertClean("Run `a; b` first.")
         self.assertClean("```\nint x = 1;\n```")

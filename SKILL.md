@@ -22,6 +22,12 @@ Every character must be one you can type on a standard US keyboard: printable AS
 | bullet dots, arrows, multiplication sign | `-`, `->` or words, `x` |
 | emoji, check marks, stars | nothing |
 
+When a quotation ends the sentence, the period goes after the closing quote, not inside it:
+
+> He said "I'm not hungry". Soon after, he left.
+
+A question mark or exclamation mark that belongs to the quoted words stays inside: She asked "Are you coming?" and waited.
+
 Leave text untouched where it is not yours to change: code, commands, quotations, and accented letters in names the user wrote that way (Zoe vs Zoë: follow the user).
 
 ## Rule 2: The recipe

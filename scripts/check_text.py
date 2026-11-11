@@ -96,6 +96,7 @@ PHRASES = [
 ]
 PHRASE_RES = [(re.compile(p, re.IGNORECASE), m) for p, m in PHRASES]
 INLINE_CODE = re.compile(r"`[^`]*`")
+QUOTE_PERIOD = re.compile(r"(?<=\w)\.(?=\"(\s|$))")
 
 
 def describe(ch):
@@ -123,6 +124,9 @@ def check(text, label):
             prose = INLINE_CODE.sub(lambda m: " " * len(m.group(0)), line)
             for m in re.finditer(";", prose):
                 warnings.append("%s:%d:%d: semicolon: split into two sentences, or join with a comma and 'and/but/so'" % (label, lineno, m.start() + 1))
+            # Sentence period belongs after the closing quote: said "I'm not hungry". Soon...
+            for m in QUOTE_PERIOD.finditer(apply_fixes(prose)):
+                warnings.append("%s:%d:%d: period inside closing quote: move it after the quote (\"...\".)" % (label, lineno, m.start() + 1))
         for col, ch in enumerate(line, 1):
             if is_keyboard(ch):
                 continue
